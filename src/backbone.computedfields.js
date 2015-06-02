@@ -46,8 +46,8 @@ Backbone.ComputedFields = (function(Backbone, _){
                 var updateComputed = _.bind(function (model, value, options) {
                     options = options || {};
                     options.skipChangeEvent = true;
-                    value = this._computeFieldValue(field);
-                    this.model.set(fieldName, value, options);
+                    var computedValue = this._computeFieldValue(field);
+                    this.model.set(fieldName, computedValue, options);
                 }, this);
 
                 var updateDependent = _.bind(function (model, value, options) {
